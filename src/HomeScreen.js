@@ -1,20 +1,25 @@
 import {Link} from "react-router-dom";
+import "./index.css";
 
 const HomeScreen = () => {
     return (
-        <div className="container">
-            <h1>Home</h1>
-            <Link to="/search">
-                Search
-            </Link>
+        <div className="container home mt-2">
+            <h1 className="home-title">Movies</h1>
+            <hr/>
+            <div className="home-button">
+                <Link to="/search">
+                    <button className="btn btn-danger m-5">Search Movies</button>
+                </Link>
+                <Link to="/login">
+                    <button className="btn btn-primary m-5">Login</button>
+                </Link>
+            </div>
             <br/>
-            <Link to="/login">
-                Login
-            </Link>
-            <br/>
+            <div className="home-policy">
             <Link to="/privacy">
-                Privacy Policy
+                <span>Privacy Policy</span>
             </Link>
+            </div>
         </div>
     )
 };
