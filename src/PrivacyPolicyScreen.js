@@ -2,7 +2,7 @@ import "./index.css";
 
 const PrivacyPolicyScreen = () => {
     return (
-        <div className="container mt-2">
+        <div className="container-fluid vh-100 mt-2">
             <h1 className="pb-2">Privacy Policy</h1>
 
             <ul className="list-group">

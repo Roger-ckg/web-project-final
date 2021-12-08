@@ -3,21 +3,27 @@ import "./index.css";
 
 const HomeScreen = () => {
     return (
-        <div className="container home mt-2">
-            <h1 className="home-title">Movies</h1>
+        <div className="container-fluid vh-100 home">
+            <h1 className="home-title pt-5">MoviesHub</h1>
             <hr/>
-            <div className="home-button">
+            <div className="home-button m-3 mt-5">
+                <span className="home-text">Search Movies as a guest:</span>
+                <br/>
                 <Link to="/search">
-                    <button className="btn btn-danger m-5">Search Movies</button>
+                    <button className="btn btn-danger m-2">Search</button>
                 </Link>
+            </div>
+            <div className="home-button">
+                <span className="home-text">Login if you are a member:</span>
+                <br/>
                 <Link to="/login">
-                    <button className="btn btn-primary m-5">Login</button>
+                    <button className="btn btn-primary m-2">Login</button>
                 </Link>
             </div>
             <br/>
             <div className="home-policy">
             <Link to="/privacy">
-                <span>Privacy Policy</span>
+                <span className="home-text-policy">Privacy Policy</span>
             </Link>
             </div>
         </div>
