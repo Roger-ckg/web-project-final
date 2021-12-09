@@ -24,7 +24,7 @@ const ProfileComponent = () => {
             </div>
             <div>
                 <div className="position-relative">
-                    <img className="pos-absolute w-100" src="../../../images/banner.jpg" alt="bannerPic"/>
+                    <img className="pos-absolute w-100" src="../../../images/banner1.jpg" alt="bannerPic"/>
 
                     <div className="pos-profile wd-zindex-front">
                         <img className="rounded-circle wd-profile border wd-white-ex"
