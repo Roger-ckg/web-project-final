@@ -25,7 +25,7 @@ function App() {
                             <Route path="/" element={<HomeScreen/>}/>
                             <Route path="/privacy" element={<PrivacyPolicyScreen/>}/>
                             <Route path="/profile" element={<ProfileComponent/>}/>
-                            <Route path="/EditProfile" element={<EditProfile/>}/>
+                            <Route path="/Edit-Profile" element={<EditProfile/>}/>
                         </Routes>
                     </div>
                 </BrowserRouter>

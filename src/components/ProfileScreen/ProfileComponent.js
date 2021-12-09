@@ -33,11 +33,11 @@ const ProfileComponent = () => {
                 </div>
 
                 <Link to="/edit-profile">
-                    <div className="mt-2 float-end"><a className="btn btn-outline-dark wd-round">Edit Your Profile</a></div>
+                    <div className="mt-2 float-end"><a className="btn btn-outline-dark wd-round">Edit Profile</a></div>
                 </Link>
 
                 <br/><br/>
-                <div className="mt-4">
+                <div className="mt-1">
                     <div>
                         <div className="wd-highlight">firstName lastName</div>
                         <div className="wd-general">handle</div>

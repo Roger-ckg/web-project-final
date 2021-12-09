@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom"
 import {useDispatch} from "react-redux";
 import './index.css'
-import service from "../service";
+import profile from "../../../reducers/profile";
 
 
 const ChangeProfile = ({profileData}) => {
@@ -93,7 +93,7 @@ const ChangeProfile = ({profileData}) => {
                 </div>
                 <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8">
                     <input value={firstName} onChange={handleFirstName} type="textarea"
-                           placeholder="John" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}/>
+                           placeholder="First Name" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}/>
                 </div>
             </div>
 
@@ -103,7 +103,7 @@ const ChangeProfile = ({profileData}) => {
                 </div>
                 <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8">
                     <input value={lastName} onChange={handleLastName} type="textarea"
-                           placeholder="Doe" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}>
+                           placeholder="Last Name" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}>
                     </input>
                 </div>
             </div>
@@ -114,7 +114,7 @@ const ChangeProfile = ({profileData}) => {
                 </div>
                 <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8">
                     <textarea value={bio} onChange={handleBio}
-                              placeholder="Enter bio" className="wd-edit-bio form-control" style={{marginLeft:"-20px"}}>
+                              placeholder="Bio" className="wd-edit-bio form-control" style={{marginLeft:"-20px"}}>
                     </textarea>
                 </div>
             </div>
@@ -125,7 +125,7 @@ const ChangeProfile = ({profileData}) => {
                 </div>
                 <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8">
                     <input value={location} onChange={handleLocation} type="textarea"
-                           placeholder="e.g. San Francisco, CA" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}>
+                           placeholder="New York, NY" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}>
                     </input>
                 </div>
             </div>
@@ -136,7 +136,7 @@ const ChangeProfile = ({profileData}) => {
                 </div>
                 <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8">
                     <input value={website} onChange={handleWebsite} type="textarea"
-                           placeholder="e.g. www.apple.com" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}>
+                           placeholder="www.movie.com" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}>
                     </input>
                 </div>
             </div>
