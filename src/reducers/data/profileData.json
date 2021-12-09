@@ -1,10 +1,15 @@
+
+
 {
-  "firstName": "Lu",	"lastName": "Wang",	"handle": "lw",
+  "firstName": "Lu",
+  "lastName": "Wang",
+  "handle": "lw",
   "emailAddress": "wang.lu6@northeastern.edu",
   "profilePicture": "../../../images/profile-pic1.png",
   "bannerPicture": "../../../images/banner-pic1.jpg",
   "bio": "NEU Graduate Student, Software Engineer",
   "location": "New York, NY",	"dateOfBirth": "Jan 1, 1995", "dateJoined": "01/2018",
   "website":"https://www.youtube.com/channel/UCCgliN1n-OaiYJbZV8gypNA",
-  "followingCount": 100,	"followersCount": 420
+  "followingCount": 100,
+  "followersCount": 420
 }

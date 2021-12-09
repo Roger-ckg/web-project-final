@@ -1,0 +1,48 @@
+.wd-edit-profile{
+    color: white;
+}
+
+.wd-save-profile {
+    background-color: white;
+    border:1px solid rgb(126, 126, 126);
+    color:black;
+}
+
+.wd-save-profile:hover {
+    background-color: lightgrey;
+    border:1px solid rgb(125, 125, 125);
+}
+
+.wd-banner {
+    width:80%;
+}
+
+.wd-edit-ProfilePic {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:2px solid black;
+    margin-left:70px;
+    margin-top: -60px;
+}
+
+.wd-edit-text {
+    height:40px;
+    border:none;
+    background-color: black;
+    color:white;
+    border-bottom:1px solid rgb(56, 56, 56);
+}
+
+.wd-text-edit:active {
+    background-color: black;
+    color:white;
+}
+
+.wd-edit-bio {
+    border:none;
+    border-bottom:1px solid rgb(56, 56, 56);
+    background-color: black;
+    color:white;
+
+}
