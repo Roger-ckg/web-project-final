@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import ProfileComponent from "./ProfileComponent";
+
+
 const selectProfile = (state) => state.profile;
 
 const ProfileScreen = () => {
 
     const profile = useSelector(selectProfile);
-    useEffect(() => profile);
+
 
     return(
         <div className="row mt-3">

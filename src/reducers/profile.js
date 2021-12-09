@@ -2,29 +2,22 @@ import data from './data/profileData.json'
 
 const profile = (state = data, action) => {
     switch (action.type) {
-        case "save-profile-changes":
-            const profileState = {
+        case "save-changes":
+            const newState = {
                 "firstName": action.firstName,
                 "lastName" :action.lastName,
-                "handle":action.handle,
-                "emailAddress":action.emailAddress,
-                "profilePicture":action.profilePicture,
-                "bannerPicture":action.bannerPicture,
+                "handle":"lw",
+                "profilePicture":"../../../images/profile-pic1.jpg",
+                "bannerPicture": "../../../images/banner-pic1.jpg",
                 "bio":action.bio,
+                "website":action.website,
                 "location":action.location,
                 "dateOfBirth":action.birthday,
-                "password":action.password,
-                "dateJoined": action.dateJoined,
-                "followingCount": 69,
-                "followersCount": 420,
-                "website":action.website
+                "dateJoined": "Jan 2018",
+                "followingCount": 100,
+                "followersCount": 420
             }
-            return(profileState);
-        case 'get-profile':
-            console.log("reducer print statement: ", action.profile);
-            return (action.profile);
-        case 'update-profile':
-            return (action.profile);
+            return(newState);
         default:
             return(state);
     }

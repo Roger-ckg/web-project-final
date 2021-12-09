@@ -5,10 +5,11 @@ import './index.css'
 import service from "../service";
 
 
-const ChangeProfile = ({profileData, edit, setEdit, profileID}) => {
+const ChangeProfile = ({profileData}) => {
 
 
-    const dispatch = useDispatch();
+    let dispatch = useDispatch();
+
     let [firstName, setFirstName] = useState(profileData.firstName);
     let [lastName, setLastName] = useState(profileData.lastName);
     let [bio, setBio] = useState(profileData.bio);
@@ -37,18 +38,15 @@ const ChangeProfile = ({profileData, edit, setEdit, profileID}) => {
     }
 
     const clickSaveChanges = (event) => {
-        const newProfile = {
-            ...profileData,
+        dispatch({
+            type:'save-changes',
             firstName:firstName,
             lastName:lastName,
             bio:bio,
             location:location,
             website:website,
-            dateOfBirth:birthday,
-        }
-        console.log(newProfile);
-        service.updateProfile(newProfile, dispatch, profileID);
-        setEdit(!edit);
+            birthday:birthday
+        })
     }
 
     return (
