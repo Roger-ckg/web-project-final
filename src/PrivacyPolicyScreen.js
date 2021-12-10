@@ -35,7 +35,7 @@ const PrivacyPolicyScreen = () => {
                             <i className="fas fa-check-circle fa-3x"></i>
                         </div>
                         <div className="col-10 col-md-11 privacy-text">
-                            <p>We give you control through your settings to limit the data we collect from you and how we use it, and to control things like account security, marketing preferences, apps that can access your account, and address book contacts you’ve uploaded to MoviesHub. You can also download information you have shared on [].</p>
+                            <p>We give you control through your settings to limit the data we collect from you and how we use it, and to control things like account security, marketing preferences, apps that can access your account, and address book contacts you’ve uploaded to MoviesHub. You can also download information you have shared on MoviesHub.</p>
                         </div>
                     </div>
                 </li>
