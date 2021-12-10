@@ -1,0 +1,71 @@
+.wd-general {
+    font-size: 15px;
+    color: gray;
+}
+
+
+
+.wd-edit-profile-header {
+    color: white;
+}
+
+.wd-save-profile {
+    background-color: white;
+    border:1px solid rgb(126, 126, 126);
+    color:black;
+}
+
+.wd-save-profile:hover {
+    background-color: grey;
+    border:1px solid rgb(126, 126, 126);
+}
+
+
+.wd-edit-ProfilePic {
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:2px solid black;
+    margin-left:70px;
+    margin-top: -60px;
+}
+
+
+.wd-image-edit {
+    opacity: 0.8;
+    filter: grayscale(40%);
+}
+
+.wd-highlight {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+
+
+.wd-paragraph {
+    font-size: 17px;
+    color: white;
+}
+
+.wd-date-form {
+    color: white;
+    background-color: black;
+    border: 0 solid black;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+.wd-zindex-front {
+    z-index: 10;
+}
+
+.border.wd-white-ex {
+    border: 5px solid black !important;
+}
+
+
+
