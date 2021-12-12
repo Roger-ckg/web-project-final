@@ -10,6 +10,10 @@ import EditProfile from "./components/ProfileScreen/EditProfile";
 import ProfileComponent from "./components/ProfileScreen/ProfileComponent";
 import {Provider} from "react-redux";
 import profile from "./reducers/profile";
+import Login from "./components/login/login";
+import Register from "./components/register/register";
+import SearchScreen from "./components/SearchScreen/SearchScreen";
+import DetailsScreen from "./components/SearchScreen/DetailsScreen";
 
 
 const reducer = combineReducers({profile: profile})
@@ -23,6 +27,11 @@ function App() {
                     <div className="container">
                         <Routes>
                             <Route path="/" element={<HomeScreen/>}/>
+                            <Route path="/login" element={<Login/>}/>
+                            <Route path="/register" element={<Register/>}/>
+                            <Route path="/search" element={<SearchScreen/>}/>
+                            <Route path="/search/:searchTerm" element={<SearchScreen/>}/>
+                            <Route path="/details/:id" element={<DetailsScreen/>}/>
                             <Route path="/privacy" element={<PrivacyPolicyScreen/>}/>
                             <Route path="/profile" element={<ProfileComponent/>}/>
                             <Route path="/Edit-Profile" element={<EditProfile/>}/>
