@@ -4,8 +4,8 @@ import './vendors/bootstrap/bootstrap.min.css';
 import './vendors/fontawesome/css/all.min.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {combineReducers, createStore} from "redux";
-import HomeScreen from "./HomeScreen";
-import PrivacyPolicyScreen from "./PrivacyPolicyScreen";
+import HomeScreen from "./components/HomeScreen/HomeScreen";
+import PrivacyPolicyScreen from "./components/HomeScreen/PrivacyPolicyScreen";
 import EditProfile from "./components/ProfileScreen/EditProfile";
 import ProfileComponent from "./components/ProfileScreen/ProfileComponent";
 import {Provider} from "react-redux";
@@ -14,9 +14,10 @@ import Login from "./components/login/login";
 import Register from "./components/register/register";
 import SearchScreen from "./components/SearchScreen/SearchScreen";
 import DetailsScreen from "./components/SearchScreen/DetailsScreen";
+import login from "./reducers/data/login";
 
 
-const reducer = combineReducers({profile: profile})
+const reducer = combineReducers({profile: profile, loggedin: login})
 const store = createStore(reducer);
 
 function App() {

@@ -2,9 +2,12 @@ import React, {useState} from "react";
 import "./login.css";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import {useDispatch} from "react-redux";
 
 
 const Login = ({setLoginUser}) => {
+
+    const dispatch = useDispatch();
 
     const history=useNavigate();
     const [user,setUser]=useState({
@@ -21,12 +24,16 @@ const Login = ({setLoginUser}) => {
     }
 
     const login=()=>{
-        axios.post("http://localhost:9002/login",user)
+        axios.post("http://localhost:4001/login",user)
             .then(res=>{
                 alert(res.data.message)
                 // setLoginUser(res.data.user)
                 history("/")
             })
+
+        dispatch({
+            type: 'logged-in'
+        })
     }
 
     return (
