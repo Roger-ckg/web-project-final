@@ -2,20 +2,20 @@ import React, {useState} from 'react';
 import {Link} from "react-router-dom"
 import {useDispatch} from "react-redux";
 import './index.css'
-import profile from "../../../reducers/profile";
+import service from "../service";
 
 
-const ChangeProfile = ({profileData}) => {
+
+const ChangeProfile = ({profileData, edit, setEdit, profileID}) => {
 
 
     let dispatch = useDispatch();
-
+    //state variables
     let [firstName, setFirstName] = useState(profileData.firstName);
     let [lastName, setLastName] = useState(profileData.lastName);
-    let [bio, setBio] = useState(profileData.bio);
     let [location, setLocation] = useState(profileData.location);
-    let [website, setWebsite] = useState(profileData.website);
     let [birthday, setBirthday] = useState(profileData.dateOfBirth);
+    let [bio, setBio] = useState(profileData.bio);
 
 
     const handleFirstName = (event) => {
@@ -30,24 +30,24 @@ const ChangeProfile = ({profileData}) => {
     const handleLocation = (event) => {
         setLocation(event.target.value);
     }
-    const handleWebsite = (event) => {
-        setWebsite(event.target.value);
-    }
+
     const handleBirthday = (event) => {
         setBirthday(event.target.value);
     }
 
     const clickSaveChanges = (event) => {
-        dispatch({
-            type:'save-changes',
+        const newProfile = {
+            ...profileData,
             firstName:firstName,
             lastName:lastName,
             bio:bio,
             location:location,
-            website:website,
-            birthday:birthday
-        })
+            dateOfBirth:birthday,
+        }
+        service.updateProfile(newProfile, dispatch, profileID);
+        setEdit(!edit);
     }
+
 
     return (
         <>
@@ -130,16 +130,7 @@ const ChangeProfile = ({profileData}) => {
                 </div>
             </div>
 
-            <div className="row" style={{marginLeft:"30px", marginTop:"20px"}}>
-                <div className="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2">
-                    <p className="col-12" style={{color:"white", marginTop:"5px"}}>Website</p>
-                </div>
-                <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-8">
-                    <input value={website} onChange={handleWebsite} type="textarea"
-                           placeholder="www.movie.com" className="wd-edit-text form-control" style={{marginLeft:"-20px"}}>
-                    </input>
-                </div>
-            </div>
+
 
             <div className="row" style={{marginLeft:"30px", marginTop:"20px"}}>
                 <div className="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2">

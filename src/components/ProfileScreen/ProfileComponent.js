@@ -1,12 +1,13 @@
 
-import React, {useState} from "react";
-
+import React, {useEffect, useState} from "react";
+import {useDispatch} from "react-redux";
 import "./index.css"
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
+const ProfileComponent = ({profileData}) => {
 
+    const [edit, setEdit] = useState(false);
 
-const ProfileComponent = () => {
 
     return(
         <>
@@ -17,18 +18,18 @@ const ProfileComponent = () => {
                 </div>
 
                 <div className="col-11">
-                    <div className="wd-highlight">FirstName LastName</div>
+                    <div className="wd-highlight">Welcome to the MovieHub!</div>
+                    <div className="wd-highlight">{profileData.firstName} {profileData.lastName}</div>
                     <div className="wd-general">222 reviews</div>
                 </div>
 
             </div>
             <div>
                 <div className="position-relative">
-                    <img className="pos-absolute w-100" src="../../../images/banner1.jpg" alt="bannerPic"/>
+                    <img className="pos-absolute w-100" src={profileData.bannerPicture} alt="bannerPic"/>
 
                     <div className="pos-profile wd-zindex-front">
-                        <img className="rounded-circle wd-profile border wd-white-ex"
-                             src="../../../images/profile-pic1.jpg" alt="profilePic"/>
+                        <img className="rounded-circle wd-profile border wd-white-ex" src={profileData.profilePicture} alt="profilePic"/>
                     </div>
                 </div>
 
@@ -39,33 +40,23 @@ const ProfileComponent = () => {
                 <br/><br/>
                 <div className="mt-1">
                     <div>
-                        <div className="wd-highlight">firstName lastName</div>
-                        <div className="wd-general">handle</div>
+                        <div className="wd-highlight">{profileData.firstName} {profileData.lastName}</div>
+                        <div className="wd-general">@{profileData.firstName}</div>
                         <p className="wd-paragraph pt-2">
-                            bio
-                        </p>
+                            {profileData.bio}</p>
 
                         <div className="wd-general pb-2">
                                     <span className="me-4">
                                         <i className="fas fa-map-marker-alt pe-1"/>
-                                        location
+                                        {profileData.location}
                                     </span>
-
                             <span className="me-4">
                                         <i className="fas fa-birthday-cake pe-1"/>
-                                dateOfBirth
-                                    </span>
-
-                            <span className="me-4">
-                                        <i className="far fa-calendar pe-1"/>
-                                dateJoined
+                                {profileData.dateOfBirth}
                                     </span>
 
                         </div>
 
-                        <div className="wd-general">
-                            <span className="pe-2"><b className="text-white">followingCount</b> Following</span>
-                            <b className="text-white">followersCount</b> Followers</div>
                     </div>
                 </div>
                 <br/>
