@@ -4,12 +4,12 @@ import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
 
-
+const API_URL = 'http://localhost:4001/api';
 const Login = ({setLoginUser}) => {
 
     const dispatch = useDispatch();
 
-    const history=useNavigate();
+    const navigate=useNavigate();
     const [user,setUser]=useState({
         email:"",
         password:""
@@ -22,19 +22,35 @@ const Login = ({setLoginUser}) => {
             [name]:value
         })
     }
-
-    const login=()=>{
-        axios.post("http://localhost:4001/login",user)
-            .then(res=>{
-                alert(res.data.message)
-                // setLoginUser(res.data.user)
-                history("/")
-            })
+    const login = () => {
+        fetch(`${API_URL}/login`, {
+            method: 'POST',
+            body: JSON.stringify(user),
+            // credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(status => {
+            navigate('/profile')
+        });
 
         dispatch({
             type: 'logged-in'
         })
     }
+    // const login=()=>{
+    //     axios.post("http://localhost:4001/login",user)
+    //         .then(res=>{
+    //             //alert(res.data.message)
+    //             // setLoginUser(res.data.user)
+    //             //navigate to profile
+    //             history("/profile")
+    //         })
+    //
+    //     dispatch({
+    //         type: 'logged-in'
+    //     })
+    // }
 
     return (
         <div className="login">
@@ -44,7 +60,7 @@ const Login = ({setLoginUser}) => {
             <input type="text" placeholder="Enter your Password" name="password" value={user.password} onChange={handleChange}></input>
             <div className="button" onClick={login}>Login</div>
             <div>or</div>
-            <div className="button" onClick={()=>history("/register")}>Register</div>
+            <div className="button" onClick={()=>navigate("/register")}>Register</div>
         </div>
     )
 }

@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./register.css";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+
+const API_URL = 'http://localhost:4001/api';
 
 const Register = () => {
-    const history=useNavigate();
+    const navigate=useNavigate();
     const [user,setUser]=useState({
         name:"",
         email:"",
-        password:"",
-        reEnterPassword:""
+        password:""
+        // reEnterPassword:""
     })
 
     const handleChange=(e)=>{
@@ -19,18 +21,33 @@ const Register = () => {
             [name]:value
         })
     }
-    const register=()=>{
-        const {name,email,password,reEnterPassword}=user
-        if (name && email && password && (password===reEnterPassword)){
-            axios.post("http://localhost:9002/register",user)
-                .then(res=>{
-                    alert(res.data.message)
-                    history("/login")
-                })
-        }else{
-            alert("invalid input")
-        }
-    }
+    const register = () => {
+        fetch(`${API_URL}/register`, {
+            method: 'POST',
+            body: JSON.stringify(user),
+            // credentials: 'include',
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then(
+            status => navigate('/profile')
+        );
+    };
+    // const register=()=>{
+    //     const {name,email,password,reEnterPassword}=user
+    //     if (name && email && password && (password===reEnterPassword)){
+    //         axios.post("http://localhost:4001/register",user)
+    //             .then(res=>{
+    //                 alert(res.data.message)
+    //                 //navigate to profile
+    //                 // history("/profile")
+    //             }).then(status => {
+    //             history('/profile')
+    //         });
+    //     }else{
+    //         alert("invalid input")
+    //     }
+    // }
 
     return (
         <div className="register">
@@ -39,10 +56,10 @@ const Register = () => {
             <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={handleChange}></input>
             <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={handleChange}></input>
             <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={handleChange}></input>
-            <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={handleChange}></input>
+            {/*<input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={handleChange}></input>*/}
             <div className="button" onClick={register}>Register</div>
             <div>or</div>
-            <div className="button" onClick={()=>history("/login")}>Login</div>
+            <div className="button" onClick={()=>navigate("/login")}>Login</div>
         </div>
     )
 }
