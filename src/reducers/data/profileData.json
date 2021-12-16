@@ -1,8 +1,7 @@
 
 
 {
-  "firstName": "",
-  "lastName": "",
+  "username": "",
   "profilePicture": "../../../images/profile-pic1.jpg",
   "bannerPicture": "../../../images/banner1.jpg",
   "bio": "",

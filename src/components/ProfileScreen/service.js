@@ -7,8 +7,21 @@ export const findAllProfile = (dispatch) => {
     }))
 }
 
-export const updateProfile = (profile, dispatch, profileID) =>
-    fetch(`${URL}/${profileID}`, {
+export const findProfile = (dispatch) =>
+{
+//    debugger;
+    return fetch(URL, {
+        credentials: "include"
+    })
+        .then(res => res.json())
+        .then(profile => dispatch({
+            type: 'fetch-profile-data',
+            profileData: profile
+        }))
+}
+
+export const updateProfile = (profile, dispatch) =>
+    fetch(URL, {
         method: 'PUT',
         body: JSON.stringify(profile),
         headers: {
@@ -27,5 +40,5 @@ export const findProfileById = (id, dispatch) =>
     }));
 
 export default {
-    findAllProfile, updateProfile, findProfileById
+    findAllProfile, updateProfile, findProfileById, findProfile
 }

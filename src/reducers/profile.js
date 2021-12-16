@@ -1,6 +1,6 @@
 import data from './data/profileData.json'
 
-const profile = (state = data, action) => {
+const profile = (state = {}, action) => {
     switch (action.type) {
         case 'update-profile':
             const updatedInfo = {
@@ -30,7 +30,7 @@ const profile = (state = data, action) => {
                 "followersCount": 420
             }
             return(newInfo);
-        case 'fetch-profile-data':
+            case 'fetch-profile-data':
             return(action.profileData);
         case 'render-mongo-data':
             return(action.profileData);

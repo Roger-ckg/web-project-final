@@ -13,7 +13,10 @@ const ProfileScreen = () => {
 
     const profileData = useSelector(selectProfile);
     const dispatch = useDispatch();
-    useEffect(() => service.findProfileById("", dispatch));
+    useEffect(() => {
+//        debugger;
+        service.findProfile(dispatch)
+    }, []);
 
 
     return(
@@ -21,6 +24,7 @@ const ProfileScreen = () => {
             <div className="col-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
                  style={{"position": "relative"}}>
                 <ProfileComponent profileData={profileData}/>
+                {/*{JSON.stringify(profileData)}*/}
             </div>
         </div>
     );

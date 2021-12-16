@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link, useNavigate, useParams} from "react-router-dom";
 
 const SearchScreen = () => {
@@ -20,6 +20,10 @@ const SearchScreen = () => {
 
     return(
         <div className="container mt-5">
+            <div className="col-2">
+                <Link to="/"><i className="fas fa-arrow-left fa-1x" />
+                </Link>
+            </div>
             <button
                 className="btn btn-primary float-end"
                 onClick={findMovies}>

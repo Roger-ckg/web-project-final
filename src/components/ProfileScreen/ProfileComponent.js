@@ -1,35 +1,36 @@
 
-import React, {useEffect, useState} from "react";
-import {useDispatch} from "react-redux";
-import "./index.css"
-import {Link, useHistory} from "react-router-dom";
+import React, {useState} from "react";
+
+import "./index.css";
+import profileData from "../../reducers/data/profileData.json";
+import {Link} from "react-router-dom";
+
+
 
 const ProfileComponent = ({profileData}) => {
 
     const [edit, setEdit] = useState(false);
-
-
     return(
         <>
         <div>
             <div className="row">
                 <div className="col-1">
-                    <i className="fas fa-arrow-left fa-1x" />
+                    <Link to="/"><i className="fas fa-arrow-left fa-1x" />
+                    </Link>
                 </div>
 
                 <div className="col-11">
                     <div className="wd-highlight">Welcome to the MovieHub!</div>
-                    <div className="wd-highlight">{profileData.firstName} {profileData.lastName}</div>
-                    <div className="wd-general">222 reviews</div>
+                    <div className="wd-highlight">{profileData.username}</div>
                 </div>
 
             </div>
             <div>
                 <div className="position-relative">
-                    <img className="pos-absolute w-100" src={profileData.bannerPicture} alt="bannerPic"/>
+                    <img className="pos-absolute w-100" src={"../../../images/banner1.jpg"} alt="bannerPic"/>
 
                     <div className="pos-profile wd-zindex-front">
-                        <img className="rounded-circle wd-profile border wd-white-ex" src={profileData.profilePicture} alt="profilePic"/>
+                        <img className="rounded-circle wd-profile border wd-white-ex" src={"../../../images/profile-pic1.jpg"} alt="profilePic"/>
                     </div>
                 </div>
 
@@ -41,7 +42,6 @@ const ProfileComponent = ({profileData}) => {
                 <div className="mt-1">
                     <div>
                         <div className="wd-highlight">{profileData.firstName} {profileData.lastName}</div>
-                        <div className="wd-general">@{profileData.firstName}</div>
                         <p className="wd-paragraph pt-2">
                             {profileData.bio}</p>
 

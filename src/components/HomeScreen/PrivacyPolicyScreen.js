@@ -1,4 +1,4 @@
-import "./index.css";
+import "../../index.css";
 
 const PrivacyPolicyScreen = () => {
     return (
@@ -12,7 +12,7 @@ const PrivacyPolicyScreen = () => {
                     <i className="fas fa-check-circle fa-3x"></i>
                     </div>
                     <div className="col-10 col-md-11 privacy-text">
-                    <p>[] is public and reviews and comments are immediately viewable and searchable by anyone around the world. We give you non-public ways to communicate on [] too, through private profile and Direct Messages. You can also use [] under a pseudonym if you prefer not to use your name.</p>
+                    <p>MoviesHub is public and reviews and comments are immediately viewable and searchable by anyone around the world. We give you non-public ways to communicate on MoviesHub too, through private profile and Direct Messages. You can also use MoviesHub under a pseudonym if you prefer not to use your name.</p>
                     </div>
                 </div>
                 </li>
@@ -24,7 +24,7 @@ const PrivacyPolicyScreen = () => {
                             <i className="fas fa-check-circle fa-3x"></i>
                         </div>
                         <div className="col-10 col-md-11 privacy-text">
-                            <p>When you use [], you can choose to share additional information with us like your email address, phone number, address book contacts, and a public profile. We use this information for things like keeping your account secure and showing you more relevant contents.</p>
+                            <p>When you use MoviesHub, you can choose to share additional information with us like your email address, phone number, address book contacts, and a public profile. We use this information for things like keeping your account secure and showing you more relevant contents.</p>
                         </div>
                     </div>
                 </li>
@@ -35,7 +35,7 @@ const PrivacyPolicyScreen = () => {
                             <i className="fas fa-check-circle fa-3x"></i>
                         </div>
                         <div className="col-10 col-md-11 privacy-text">
-                            <p>We give you control through your settings to limit the data we collect from you and how we use it, and to control things like account security, marketing preferences, apps that can access your account, and address book contacts you’ve uploaded to []. You can also download information you have shared on [].</p>
+                            <p>We give you control through your settings to limit the data we collect from you and how we use it, and to control things like account security, marketing preferences, apps that can access your account, and address book contacts you’ve uploaded to MoviesHub. You can also download information you have shared on MoviesHub.</p>
                         </div>
                     </div>
                 </li>
